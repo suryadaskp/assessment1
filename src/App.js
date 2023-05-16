@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+/* eslint-disable react/jsx-no-undef */
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Add from './components/Add';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      
+      <Routes>
+        <Route path="/h" element={<Home/>}/>
+        <Route path="/a" element={<Add/>}/>
+        
+     </Routes>
     </div>
   );
 }
